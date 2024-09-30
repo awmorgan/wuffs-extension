@@ -1,25 +1,34 @@
 {
-  "name": "wuffs-extension",
-  "displayName": "wuffs-extension",
-  "description": "wuffs language support",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.93.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "wuffs",
-      "aliases": ["wuffs", "wuffs"],
-      "extensions": [".wuffs"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "wuffs",
-      "scopeName": "source.wuffs",
-      "path": "./syntaxes/wuffs.tmLanguage.json"
-    }]
-  }
+    "name": "wuffs-extension",
+    "displayName": "wuffs-extension",
+    "description": "wuffs language support",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.93.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "wuffs",
+                "aliases": [
+                    "wuffs",
+                    "wuffs"
+                ],
+                "extensions": [
+                    ".wuffs"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "wuffs",
+                "scopeName": "source.wuffs",
+                "path": "./syntaxes/wuffs.tmLanguage.json"
+            }
+        ]
+    }
 }
