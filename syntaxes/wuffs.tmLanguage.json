@@ -8,6 +8,9 @@
         },
         {
             "include": "#keywords"
+        },
+        {
+            "include": "#strings"
         }
     ],
     "repository": {
@@ -36,6 +39,48 @@
                 {
                     "name": "keyword.other.wuffs",
                     "match": "\\b(assert|choose|choosy|io_bind|io_forget_history|io_limit|implements|inv|post|pre|use|via)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.wuffs",
+                    "begin": "\"",
+                    "end": "\"|$",
+                    "patterns": [
+                        {
+                            "include": "#statuses"
+                        },
+                        {
+                            "name": "string.content.wuffs",
+                            "match": "[^\"\\n]+"
+                        },
+                        {
+                            "name": "invalid.illegal.newline-in-string.wuffs",
+                            "match": "\\n"
+                        }
+                    ]
+                }
+            ]
+        },
+        "statuses": {
+            "patterns": [
+                {
+                    "name": "status.ok.wuffs",
+                    "match": "\\bok\\b"
+                },
+                {
+                    "name": "status.note.wuffs",
+                    "match": "@[^\"\\n]*"
+                },
+                {
+                    "name": "status.suspension.wuffs",
+                    "match": "\\$[^\"\\n]*"
+                },
+                {
+                    "name": "status.error.wuffs",
+                    "match": "#[^\"\\n]*"
                 }
             ]
         }
