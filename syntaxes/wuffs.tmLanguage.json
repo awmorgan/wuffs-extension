@@ -1,18 +1,43 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "wuffs",
-	"patterns": [
-		{
-			"include": "#comments"
-		}
-	],
-	"repository": {
-		"comments": {
-			"patterns": [{
-				"name": "comment.line.wuffs",
-				"match": "//.*$"
-			}]
-		}
-	},
-	"scopeName": "source.wuffs"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "wuffs",
+    "scopeName": "source.wuffs",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.wuffs",
+                    "match": "//.*$"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.wuffs",
+                    "match": "\\b(break|continue|else|if|iterate|return|while|yield)\\b"
+                },
+                {
+                    "name": "keyword.declaration.wuffs",
+                    "match": "\\b(const|func|struct|var)\\b"
+                },
+                {
+                    "name": "keyword.access.wuffs",
+                    "match": "\\b(pri|pub)\\b"
+                },
+                {
+                    "name": "keyword.other.wuffs",
+                    "match": "\\b(assert|choose|choosy|io_bind|io_forget_history|io_limit|implements|inv|post|pre|use|via)\\b"
+                }
+            ]
+        }
+    }
 }
